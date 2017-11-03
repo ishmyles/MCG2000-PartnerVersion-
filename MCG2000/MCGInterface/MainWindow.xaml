@@ -1,0 +1,115 @@
+﻿<Window x:Class="MCGInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MCGInterface"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Border Grid.Row="0" BorderThickness="10,3,0,0">
+            <TextBlock FontWeight="Bold">
+                Instructions
+            </TextBlock>
+            </Border>
+
+            <Border Grid.Row="1" BorderThickness="10,3,0,0">
+                <TextBlock TextWrapping="Wrap">
+                    Please enter your name then select your class to start battle.
+                </TextBlock>
+            </Border>
+
+            <Border Grid.Row="2" BorderThickness="10,5,0,0">
+                <TextBlock TextWrapping="Wrap">
+                    To battle - click either "Normal Attack" or "Special Attack", and repeat until either the enemy or you are defeated.
+                </TextBlock>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.ColumnSpan="2">
+            <Border Margin="70,20,10,100">
+                <StackPanel Orientation="Horizontal" >
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type TextBox}">
+                            <Setter Property="Margin" Value="0,0,10,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBox Name="PlayerNameTB" Width="150" Height="25"></TextBox>
+                    <Button Name="PlayerNameBTN" Width="100" Height="25" Click="PlayerNameBTN_Click">Enter</Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="3">
+            <Border Margin="10,16,10,10">
+                <StackPanel Orientation="Vertical" >
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Margin" Value="0,10,0,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Button Name="WarriorBTN" Width="100" Height="30" FontSize="14" Click="WarriorBTN_Click">Warrior</Button>
+                    <Button Name="MageBTN" Width="100" Height="30" FontSize="14" Click="MageBTN_Click">Mage</Button>
+                    <Button Name="ThiefBTN" Width="100" Height="30" FontSize="14" Click="ThiefBTN_Click">Thief</Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Border Margin="10" BorderBrush="Black" BorderThickness="2"></Border>
+            <StackPanel Margin="10">
+                <TextBlock Height="35" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center">PLAYER</TextBlock>
+                <TextBlock Name="PlayerNameTBlk" Height="30" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Name="PlayerClassTBlk" Height="30" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Name="PlayerHealthTBlk" Height="30" FontSize="25" HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="3">
+            <Border Margin="10" BorderBrush="Black" BorderThickness="2"></Border>
+            <StackPanel Margin="10">
+                <TextBlock Height="35" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center">ENEMY</TextBlock>
+                <TextBlock Name="EnemyTypeTBlk" Height="30" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Name="EnemyHealthTBlk" Height="30" FontSize="25" HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border Margin="35,45" BorderBrush="Black" BorderThickness="1">
+                <TextBlock Name="ResultTBlk" FontSize="40" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Center"></TextBlock>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="10"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Button Name="NormalAttackBTN" Width="150" Height="50" FontSize="20" Click="NormalAttackBTN_Click">Normal Attack</Button>
+                <Button Name="SpecialAttackBTN" Width="150" Height="50" FontSize="20" Click="SpecialAttackBTN_Click">Special Attack</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
